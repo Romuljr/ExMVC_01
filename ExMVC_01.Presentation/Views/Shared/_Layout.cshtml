@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PROJETO</title>
+
+    <!-- folhas de estilo CSS -->
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Controle de Clientes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Home/Index">
+                        Página inicial
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gerenciar Clientes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/Cliente/Cadastro">Cadastrar Clientes</a>
+                        <a class="dropdown-item" href="/Cliente/Consulta">Consultar Clientes</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            Relatório de Clientes
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- titulo da aplicação -->
+    <div class="container mt-4">
+        <h5>Sistema de Controle de Clientes - COTI Informática</h5>
+        <p>
+            Projeto desenvolvido em .NET CORE MVC com Dapper e Relatórios.
+        </p>
+        <hr />
+        @RenderBody()
+    </div>
+
+    <!-- arquivos javascript -->
+    <script src="~/js/jquery-3.7.1.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+</body>
+</html>
