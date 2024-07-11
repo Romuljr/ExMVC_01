@@ -7,7 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation Layer", "1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Repository Layer", "2 - Repository Layer", "{B29EA791-A406-4CE7-98B0-54846ED1F084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExMVC_01.Presentation", "ExMVC_01.Presentation\ExMVC_01.Presentation.csproj", "{CDFE99DA-7439-4A01-AB6B-3924B3D62530}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExMVC_01.Presentation", "ExMVC_01.Presentation\ExMVC_01.Presentation.csproj", "{CDFE99DA-7439-4A01-AB6B-3924B3D62530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExMVC_01.Repository", "ExMVC_01.Repository\ExMVC_01.Repository.csproj", "{99DFF0C7-0BBA-4319-80CD-F2ADAD6C468E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +21,17 @@ Global
 		{CDFE99DA-7439-4A01-AB6B-3924B3D62530}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDFE99DA-7439-4A01-AB6B-3924B3D62530}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDFE99DA-7439-4A01-AB6B-3924B3D62530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99DFF0C7-0BBA-4319-80CD-F2ADAD6C468E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99DFF0C7-0BBA-4319-80CD-F2ADAD6C468E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99DFF0C7-0BBA-4319-80CD-F2ADAD6C468E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99DFF0C7-0BBA-4319-80CD-F2ADAD6C468E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CDFE99DA-7439-4A01-AB6B-3924B3D62530} = {365C1238-84C2-4AD7-91F8-453E2164F789}
+		{99DFF0C7-0BBA-4319-80CD-F2ADAD6C468E} = {B29EA791-A406-4CE7-98B0-54846ED1F084}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D0FD23F-5A85-408C-85DB-B08669DB0105}
