@@ -9,47 +9,74 @@
 
 @using (Html.BeginForm())
 {
-    <label>Nome do Cliente:</label>
-    @Html.TextBoxFor(model => model.Nome,
-         new
-         {
-             @class = "form-control col-md-4",
-             @autocomplete = "off",
-             @placeholder = "Ex: João Carlos"
-         })
-    <br />
-    <label>Email:</label>
-    @Html.TextBoxFor(model => model.Email,
-         new
-         {
-             @class = "form-control col-md-4",
-             @autocomplete = "off",
-             @placeholder = "Ex: joaocarlos@gmail.com"
-         })
-    <br />
-    <label>CPF:</label>
-    @Html.TextBoxFor(model => model.Cpf,
-         new
-         {
-             @class = "form-control col-md-4",
-             @autocomplete = "off",
-             @placeholder = "Ex: 12345678900"
-         })
-    <br />
-    <label>Data de Nascimento:</label>
-    @Html.TextBoxFor(model => model.DataNascimento,
-         new
-         {
-             @class = "form-control col-md-4",
-             @autocomplete = "off",
-             @type = "date"
-         })
-    <br />
+    <div class="form-group">
+        <label>Nome do Cliente:</label>
+        @Html.TextBoxFor(model => model.Nome,
+                new
+                {
+                    @class = "form-control col-md-4",
+                    @autocomplete = "off",
+                    @placeholder = "Ex: João Carlos"
+                })
+        <span class="text-danger">
+            @Html.ValidationMessageFor(model => model.Nome)
+        </span>
+    </div>
 
-<label>Sexo:</label> <br/>
- @Html.RadioButtonFor(model => model.Sexo, "F") <span>Feminino</span>
- @Html.RadioButtonFor(model => model.Sexo, "M") <span>Masculino</span>
- <br/>
- <br/>
- <input type="submit" class="btn btn-success" value="Realizar Cadastro"/>
+    <div class="form-group">
+        <label>Email:</label>
+        @Html.TextBoxFor(model => model.Email,
+                new
+                {
+                    @class = "form-control col-md-4",
+                    @autocomplete = "off",
+                    @placeholder = "Ex: joaocarlos@gmail.com"
+                })
+        <span class="text-danger">
+            @Html.ValidationMessageFor(model => model.Email)
+        </span>
+    </div>
+
+    <div class="form-group">
+        <label>CPF:</label>
+        @Html.TextBoxFor(model => model.Cpf,
+                new
+                {
+                    @class = "form-control col-md-4",
+                    @autocomplete = "off",
+                    @placeholder = "Ex: 12345678900"
+                })
+        <span class="text-danger">
+            @Html.ValidationMessageFor(model => model.Cpf)
+        </span>
+    </div>
+
+    <div class="form-group">
+        <label>Data de Nascimento:</label>
+        @Html.TextBoxFor(model => model.DataNascimento,
+                new
+                {
+                    @class = "form-control col-md-4",
+                    @autocomplete = "off",
+                    @type = "date"
+                })
+        <span class="text-danger">
+            @Html.ValidationMessageFor(model => model.DataNascimento)
+        </span>
+    </div>
+
+    <div class="form-group">
+        <label>Sexo:</label>
+        <br />
+        @Html.RadioButtonFor(model => model.Sexo, "F") <span>Feminino</span>
+        @Html.RadioButtonFor(model => model.Sexo, "M") <span>Masculino</span>
+        <span class="text-danger">
+            @Html.ValidationMessageFor(model => model.Sexo)
+        </span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-success" value="Realizar Cadastro" />
+    </div>
 }
+

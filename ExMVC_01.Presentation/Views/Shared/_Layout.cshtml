@@ -45,6 +45,36 @@
         </div>
     </nav>
 
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Sucesso!</strong> @TempData["MensagemSucesso"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
+    @if (TempData["MensagemAlerta"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Sucesso!</strong> @TempData["MensagemAlerta"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Erro!</strong> @TempData["MensagemErro"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
     <!-- titulo da aplicação -->
     <div class="container mt-4">
         <h5>Sistema de Controle de Clientes - COTI Informática</h5>

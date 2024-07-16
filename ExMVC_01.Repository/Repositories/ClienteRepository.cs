@@ -38,7 +38,7 @@ namespace ExMVC_01.Repository.Repositories
                         P_EMAIL = obj.Email,
                         P_CPF = obj.Cpf,
                         P_DATANASCIMENTO = obj.DataNascimento,
-                        P_SEXO = obj.Sexo
+                        P_SEXO = (char) obj.Sexo
                     },
                     commandType: CommandType.StoredProcedure);
             }
@@ -57,7 +57,7 @@ namespace ExMVC_01.Repository.Repositories
                         P_ID = obj.Id,
                         P_NOME = obj.Nome,
                         P_DATANASCIMENTO = obj.DataNascimento,
-                        P_SEXO = obj.Sexo
+                        P_SEXO = (char) obj.Sexo
                     },
                     commandType: CommandType.StoredProcedure);
             }
@@ -89,7 +89,7 @@ namespace ExMVC_01.Repository.Repositories
                      EMAIL,
                      CPF,
                      DATANASCIMENTO,
-                     SEXO,
+                     CASE WHEN SEXO = 'F' THEN 'Feminino' ELSE 'Masculino' END,
                      DATACRIACAO,
                      DATAALTERACAO,
                      ATIVO AS STATUS
@@ -113,7 +113,7 @@ namespace ExMVC_01.Repository.Repositories
                      EMAIL,
                      CPF,
                      DATANASCIMENTO,
-                     SEXO,
+                     CASE WHEN SEXO = 'F' THEN 'Feminino' ELSE 'Masculino' END,
                      DATACRIACAO,
                      DATAALTERACAO,
                      ATIVO AS STATUS
@@ -145,7 +145,7 @@ namespace ExMVC_01.Repository.Repositories
              EMAIL,
              CPF,
              DATANASCIMENTO,
-             SEXO,
+             CASE WHEN SEXO = 'F' THEN 'Feminino' ELSE 'Masculino' END,
              DATACRIACAO,
              DATAALTERACAO,
              ATIVO AS STATUS
@@ -174,7 +174,7 @@ namespace ExMVC_01.Repository.Repositories
              EMAIL,
              CPF,
              DATANASCIMENTO,
-             SEXO,
+             CASE WHEN SEXO = 'F' THEN 'Feminino' ELSE 'Masculino' END,
              DATACRIACAO,
              DATAALTERACAO,
              ATIVO AS STATUS
@@ -202,7 +202,7 @@ namespace ExMVC_01.Repository.Repositories
              EMAIL,
              CPF,
              DATANASCIMENTO,
-             SEXO,
+             CASE WHEN SEXO = 'F' THEN 'Feminino' ELSE 'Masculino' END,
              DATACRIACAO,
              DATAALTERACAO,
              ATIVO AS STATUS
