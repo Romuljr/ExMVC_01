@@ -1,8 +1,10 @@
 ﻿using ExMVC_01.Presentation.Models;
+using ExMVC_01.Presentation.Reports;
 using ExMVC_01.Repository.Entities;
 using ExMVC_01.Repository.Entities.Enums;
 using ExMVC_01.Repository.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace ExMVC_01.Presentation.Controllers
 {
@@ -139,6 +141,54 @@ namespace ExMVC_01.Presentation.Controllers
                 TempData["MensagemErro"] = e.Message;
             }
             return View();
+        }
+
+        public IActionResult Exclusao(Guid id, [FromServices] ClienteRepository clienteRepository)
+        {
+            try
+            {
+                var cliente = clienteRepository.ObterPorId(id);
+
+                clienteRepository.Excluir(cliente);
+
+                TempData["MensagemSucesso"] = $"Cliente '{cliente.Nome}' excluído com sucesso. ";
+            }
+            catch (Exception e)
+            {
+
+                TempData["MensagemErro"] = e.Message;
+            }
+
+            return RedirectToAction("Consulta");
+        }
+
+        public void Relatorio([FromServices] ClienteRepository clienteRepository)
+        {
+            try
+            {
+                //consultando todos os clientes da base de dados
+                var clientes = clienteRepository.Consultar();
+                
+                //gerando o relatório excel..
+                var clienteReports = new ClienteReports();
+                var excel = clienteReports.GenerateExcel(clientes);
+                
+                //definindo o nome do arquivo
+                var filename = $"relatorio_clientes_{DateTime.Now.ToString("yyyyMMddHHmmss")}.xlsx";
+                
+                //download do arquivo..
+                Response.Clear();
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"; //MIME TYPE
+                Response.Headers.Add("content-disposition", "attachment; filename=" + filename); //nome do arquivo
+                Response.Body.WriteAsync(excel, 0, excel.Length);
+                Response.Body.Flush(); //realiza o download!
+                Response.StatusCode = StatusCodes.Status200OK; //OK!!
+            }
+            catch (Exception e)
+            {
+                //imprimir o erro no debug no visualstudio
+                Debug.WriteLine(e.Message);
+            }
         }
 
     }

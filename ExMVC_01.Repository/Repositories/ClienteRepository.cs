@@ -63,7 +63,7 @@ namespace ExMVC_01.Repository.Repositories
             }
         }
 
-        public void Exluir(Cliente obj)
+        public void Excluir(Cliente obj)
         {
             //Abrindo uma conexão com o banco de dados do SqlServer
             using (var connection = new SqlConnection(connectionString))
@@ -94,6 +94,7 @@ namespace ExMVC_01.Repository.Repositories
                      DATAALTERACAO,
                      ATIVO AS STATUS
                  FROM CLIENTE 
+                 WHERE ATIVO = 1
                  ORDER BY NOME ASC";
 
             //Conectando  com o banco de dados do SqlServer a query...
@@ -119,6 +120,7 @@ namespace ExMVC_01.Repository.Repositories
                      ATIVO AS STATUS
                  FROM CLIENTE 
                  WHERE NOME LIKE @P_NOME
+                 AND ATIVO = 1
                  ORDER BY NOME ASC";
 
 
@@ -207,7 +209,8 @@ namespace ExMVC_01.Repository.Repositories
              DATAALTERACAO,
              ATIVO AS STATUS
              FROM CLIENTE 
-             WHERE ID = @P_ID";
+             WHERE ID = @P_ID
+             AND ATIVO = 1";
             //conectando no banco de dados e executando a query..
             using (var connection = new SqlConnection(connectionString))
             {

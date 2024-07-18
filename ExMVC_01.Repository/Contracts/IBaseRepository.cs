@@ -10,7 +10,7 @@ namespace ExMVC_01.Repository.Contracts
     {
         void Inserir(TEntity obj);
         void Alterar(TEntity obj);
-        void Exluir(TEntity obj);
+        void Excluir(TEntity obj);
 
         List<TEntity> Consultar();
         TEntity ObterPorId(Guid id);
